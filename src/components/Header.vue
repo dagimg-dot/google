@@ -1,11 +1,11 @@
 <template>
   <div class="bg-white py-3">
-      <div class="container mx-auto flex justify-end">
+      <div class="mx-4 flex justify-end">
           <ul class="flex space-x-6 items-center">
             <li><a href="#" class="text-gray-700 hover:underline">Gmail</a></li>
             <li><a href="#" class="text-gray-700 hover:underline" >Images</a></li>
             <a href="">
-              <div class="w-8 h-8 flex items-center justify-center">
+              <div class="w-10 h-10 flex items-center justify-center">
                 <img src="../assets/9dots.svg" class="w-5 h-4">
               </div>
             </a>
