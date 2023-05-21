@@ -2,10 +2,10 @@
 </script>
 
 <template>
-    <div class="flex flex-col items-center justify-center mt-11">
+    <div class="flex flex-col items-center justify-center mt-48">
         <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
         <div class="my-7 flex items-center flex-col">
-            <div class="flex space-x-3 items-center border border-gray-300 rounded-full px-3 py-2">
+            <div class="input flex space-x-3 items-center border border-gray-300 rounded-full px-3 py-2">
                 <img src="../assets/search.svg" class="w-6 h-6 pl-1">
                 <input type="text" class="outline-none bg-white px-2 py-1 w-64">
                 <div class="flex space-x-3 pr-1">
@@ -25,13 +25,14 @@
             <a href="#">Somaali</a>
             <a href="#">Affan Oromoo</a>
         </div>
-        <div>
-    
-        </div>
     </div>
 </template>
 
 <style scoped>
+    .input:hover {
+        box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+    }
+
     input {
         width: 500px;
     }
@@ -48,13 +49,13 @@
 
     span {
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 14px;
+        font-size: 13px;
         color: #3C4043;
     }
 
     a {
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 14px;
+        font-size: 13px;
         color: #1A0DAB;
     }
 
