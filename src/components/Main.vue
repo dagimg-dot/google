@@ -1,7 +1,30 @@
 <script setup>
+
+    import router from '../router/router.js'
     const props = defineProps({
         clickValue: Boolean
     })
+
+    const handleButtonClick = () => {
+        changeBorderColor()
+        validateInput()
+    }   
+
+    const changeBorderColor = () => {
+        document.querySelector('.search').classList.add('border-blue-500')
+        setTimeout(() => {
+            document.querySelector('.search').classList.remove('border-blue-500')
+        }, 2000) 
+    }   
+    const validateInput = () => {
+        if(!document.querySelector('input').value) return
+        document.querySelector('input').value = ''
+        goToResultPage()
+    }
+
+    const goToResultPage = () => {
+        router.push('/search')
+    }
 
 
 </script>
@@ -21,7 +44,7 @@
                 </div>
             </div>
             <div class="flex space-x-4 mt-8">
-                <button class="border-2 border-gray-100 bg-gray-100 hover:border-gray-200 text-gray-700 py-1.5 px-6 rounded">Google Search</button>
+                <button class="search border-2 border-gray-100 bg-gray-100 hover:border-gray-200 text-gray-700 py-1.5 px-6 rounded" @click="handleButtonClick">Google Search</button>
                 <button class="border-2 border-gray-100 bg-gray-100 hover:border-gray-200 text-gray-700 py-1.5 px-6 rounded">I'm Feeling Lucky</button>
             </div>
         </div>
