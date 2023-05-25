@@ -1,9 +1,18 @@
 <script setup>
+    import { defineProps } from 'vue'
+
+    const props = defineProps({
+        clickValue: Boolean
+    })
+
+
 </script>
 
 <template>
     <div class="flex flex-col items-center justify-center mt-48">
-        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+        <div v-show="props.clickValue">
+            <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+        </div>
         <div class="my-7 flex items-center flex-col">
             <div class="input flex space-x-3 items-center border border-gray-300 rounded-full px-3 py-2">
                 <img src="../assets/search.svg" class="w-6 h-6 pl-1">
