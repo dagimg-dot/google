@@ -1,5 +1,7 @@
 <script setup>
 import {ref} from 'vue'
+import SignInButton from './SignInButton.vue';
+import GridButton from './GridButton.vue';
 
 const isButtonClicked = ref(true)
 
@@ -18,12 +20,8 @@ const handleClick = () => {
           <ul class="flex space-x-6 items-center">
             <li><a href="#" class="text-gray-700 hover:underline">Gmail</a></li>
             <li><a href="#" class="text-gray-700 hover:underline" >Images</a></li>
-            <a href="#" @click="handleClick">
-              <div class="w-10 h-10 flex items-center justify-center">
-                <img src="../assets/9dots.svg" class="w-5 h-4">
-              </div>
-            </a>
-            <li><button class="bg-blue-500 hover:bg-blue-700 text-white py-1.5 px-6 rounded">Sign in</button></li>
+            <li @click="handleClick"><GridButton /></li>
+            <li><SignInButton /></li>
           </ul>
       </div>
   </div>
