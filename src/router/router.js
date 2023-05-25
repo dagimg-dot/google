@@ -4,8 +4,16 @@ import ResultPage from '../pages/ResultPage.vue'
 import SearchPage from '../pages/SearchPage.vue'
 
 const routes = [
-    { path: '/', component: SearchPage },
-    { path: '/search', component: ResultPage },
+    { 
+        path: '/', 
+        component: SearchPage ,
+        name: 'home'
+    },
+    { 
+        path: '/search', 
+        component: ResultPage ,
+        name: 'search',
+    },
 ]
 
 const router = createRouter({
