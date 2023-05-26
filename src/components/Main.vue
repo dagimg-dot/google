@@ -11,19 +11,23 @@
     }   
 
     const changeBorderColor = () => {
-        document.querySelector('.search').classList.add('border-blue-500')
-        setTimeout(() => {
-            document.querySelector('.search').classList.remove('border-blue-500')
-        }, 2000) 
+        document.querySelector('.search').style.borderColor = '#4034C7'
+        document.addEventListener('click', () => { 
+            const event = window.event
+            if(!event.target.classList.contains('search')) {
+                document.querySelector('.search').style.borderColor = '#dfe1e5'
+            }
+        })
     }   
     const validateInput = () => {
         if(!document.querySelector('input').value) return
+        const query = document.querySelector('input').value
         document.querySelector('input').value = ''
-        goToResultPage()
+        goToResultPage(query)
     }
 
-    const goToResultPage = () => {
-        router.push('/search')
+    const goToResultPage = (query) => {
+        router.push({name: 'search', query: {q: query}})
     }
 
 
@@ -37,7 +41,7 @@
         <div class="my-7 flex items-center flex-col">
             <div class="input flex space-x-3 items-center border border-gray-300 rounded-full px-3 py-2">
                 <img src="../assets/search.svg" class="w-6 h-6 pl-1">
-                <input type="text" class="outline-none bg-white px-2 py-1 w-64">
+                <input type="text" class="outline-none bg-white px-2 py-1 w-64" @keydown.enter="handleButtonClick">
                 <div class="flex space-x-3 pr-1">
                     <a href="#"><img src="../assets/mic.svg" class="w-7 h-7" title="Search by voice"></a>
                     <a href="#"><img src="../assets/image.svg" class="w-7 h-7" title="Search by image"></a>
