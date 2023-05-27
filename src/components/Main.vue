@@ -71,6 +71,10 @@
         width: 500px;
     }
 
+    input[type="text"] {
+        font-size: 16px;
+    }
+
     button {
         font-family: Arial, Helvetica, sans-serif;
         font-size: 14px;
