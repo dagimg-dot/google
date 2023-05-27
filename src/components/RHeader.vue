@@ -2,6 +2,20 @@
 import GridButton from '../components/GridButton.vue';
 import SignInButton from '../components/SignInButton.vue';
 import SettingsButton from '../components/SettingsButton.vue';
+
+import { useRoute } from 'vue-router';
+import { onMounted } from 'vue';
+
+const route = useRoute();
+const query = route.query.q;
+
+onMounted(() => {
+    renderQuery();
+})
+
+const renderQuery = () => {
+    document.getElementsByTagName('input')[0].value = query;
+}
 </script>
 
 <template>  
